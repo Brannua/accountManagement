@@ -1,10 +1,12 @@
-
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
+
+using std::string;
+
 class SavingsAccount
 {
 public:
-    SavingsAccount(int id, double rate, int date); // 构造函数
+    SavingsAccount(const string& id, double rate, int date); // 构造函数
     void show() const;                             // 显示账户基本信息
     void deposit(int date, double amount);         // 存款
     void withDraw(int date, double amount);        // 取款
@@ -15,7 +17,7 @@ public:
     };
 
 private:
-    int id;                               // 账户 id
+    string id;                            // 账户 id
     double balance;                       // 余额
     double rate;                          // 利率
     int lastDate;                         // 上一次修改余额的时间

@@ -10,6 +10,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <string>
 
 // TODO:  在此处引用程序需要的其他头文件
 #include "account.h"

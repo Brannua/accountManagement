@@ -6,8 +6,8 @@ const double RATE = 0.015;
 int main()
 {
     // 在日期 1 号，开俩账户
-    SavingsAccount sa0(21325302, RATE, 1);
-    SavingsAccount sa1(58320212, RATE, 1);
+    SavingsAccount sa0("21325302", RATE, 1);
+    SavingsAccount sa1("58320212", RATE, 1);
 
     // 对俩账户一顿操作
     sa0.deposit(5, 5000);
