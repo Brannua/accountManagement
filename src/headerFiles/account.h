@@ -25,5 +25,6 @@ private:
     double accumulate(int date) const;    // 修改 accumulation
     void record(int date, double amount, const string& desc); // 修改余额
     static double total;                  // 静态属性: 一个人名下所有账户的总余额
+    void error(const string& msg) const;
 };
 #endif

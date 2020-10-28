@@ -13,7 +13,7 @@ int main()
     sa0.deposit(5, 5000, "存款");
     sa1.deposit(25, 10000, "存款");
     sa0.deposit(45, 5500, "存款");
-    sa1.withDraw(60, 4000, "取款");
+    sa1.withDraw(60, 400000, "取款");
     sa0.settle(90);
     sa1.settle(90);
 
