@@ -5,7 +5,7 @@ const int DAYS_OF_YEAR = 365; // 一年按照 360 天计算
 
 double SavingsAccount::total = 0; // 初始化静态属性: 一个人名下所有账户的总余额
 
-SavingsAccount::SavingsAccount(const string& newId, double newRate, Date newDate) : id(newId), balance(0), rate(newRate), lastDate(newDate), accumulation(0)
+SavingsAccount::SavingsAccount(const string& newId, double newRate, const Date& newDate) : id(newId), balance(0), rate(newRate), lastDate(newDate), accumulation(0)
 {
     newDate.show();
     cout << "\t#" << id << " is created." << endl;
