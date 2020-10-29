@@ -20,7 +20,7 @@ Date::Date(int year, int month, int day) : year(year), month(month), day(day)
     // 4年一闰，100免闰，400再闰
     totalDays = 365 * gap + gap / 4 - gap / 100 + gap / 400;
 
-    totalDays += DAYS_BEFORE_MONTH[month];
+    totalDays += DAYS_BEFORE_MONTH[month - 1];
     if (isLeapYear())
     {
         totalDays += 1;
@@ -32,17 +32,6 @@ Date::Date(int year, int month, int day) : year(year), month(month), day(day)
 void Date::show() const
 {
     cout << getYear() << "-" << getMonth() << "-" << getDay();
-}
-
-int Date::distance(const Date &d) const
-{
-    int destDays = d.totalDays;
-    return destDays > totalDays ? destDays - totalDays : totalDays - destDays;
-}
-
-bool Date::isLeapYear() const
-{
-    return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
 }
 
 int Date::getMaxDay() const
