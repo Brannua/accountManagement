@@ -21,7 +21,7 @@ Date::Date(int year, int month, int day) : year(year), month(month), day(day)
     totalDays = 365 * gap + gap / 4 - gap / 100 + gap / 400;
 
     totalDays += DAYS_BEFORE_MONTH[month - 1];
-    if (isLeapYear())
+    if (isLeapYear() && month > 2)
     {
         totalDays += 1;
     }
