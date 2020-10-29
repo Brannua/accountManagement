@@ -19,7 +19,7 @@ int main()
 	cout << endl;
 
 	for (int i = 0, n = sizeof(accounts) / sizeof(SavingsAccount); i < n; i ++) {
-		accounts[i].settle(Date(2009, 1, 1));
+		accounts[i].settle(Date(2009, 1, 1)); // 指定日期结算利息
 		accounts[i].show();
 		cout << endl;
 	}

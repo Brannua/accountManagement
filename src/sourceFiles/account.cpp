@@ -1,7 +1,7 @@
 #include "stdafx.h"
 using namespace std;
 
-const int DAYS_OF_YEAR = 365; // 一年按照 360 天计算
+const int DAYS_OF_YEAR = 365; // 一年按照 365 天计算
 
 double SavingsAccount::total = 0; // 初始化静态属性: 一个人名下所有账户的总余额
 
