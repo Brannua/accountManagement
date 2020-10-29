@@ -42,7 +42,7 @@ void SavingsAccount::withDraw(const Date& date, double amount, const string& des
     // 注意这里要进行判断余额是否充足的
     if (amount > balance)
     {
-        error("Error: not enough money");
+        error("not enough money");
     }
     else
     {
@@ -62,5 +62,5 @@ void SavingsAccount::settle(const Date& date)
 
 void SavingsAccount::error(const string& msg) const
 {
-    cout << "Error: #" << id << endl;
+    cout << "Error: (#" << id << "): " << msg << endl;
 }
