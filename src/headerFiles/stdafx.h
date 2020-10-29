@@ -11,6 +11,7 @@
 #include <cmath>
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 // TODO:  在此处引用程序需要的其他头文件
 #include "date.h"
