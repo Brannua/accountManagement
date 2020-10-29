@@ -5,6 +5,9 @@ class Date
 {
 public:
     Date(int year, int month, int day);     // 构造函数
+    bool isLeapYear() const {               // 判断日期对象所属年份是否为闰年
+        return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
+    };
     int distance(const Date& d) const {     // 计算两日期对象之间相差的天数
         return totalDays - d.totalDays;
     };
@@ -15,9 +18,6 @@ public:
     int getMaxDay() const;                  // 获取日期对象所属月份的天数
 private:
     int year, month, day, totalDays;        // totalDays 表示从公元元年 1 月 1 日开始的第几天
-    bool isLeapYear() const {               // 判断日期对象所属年份是否为闰年
-        return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
-    };
 };
 
 #endif
