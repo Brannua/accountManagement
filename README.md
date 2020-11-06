@@ -2,7 +2,7 @@
 
 > 参考：郑莉，董渊，何江舟.C++语言程序设计(第4版), 北京：清华大学出版社，2010年
 
-### 代码首次编写于 vscode
+### 开发环境搭建
 
 - [开发环境搭建方法](https://github.com/Brannua/vscode-cpp-environment)
 
@@ -10,12 +10,6 @@
 
 ```
     chcp 65001
-```
-
-- 备份源码到 github
-
-```shell
-    sh push.sh [some msg...]
 ```
 
 ### 开发笔记( 私有 )
