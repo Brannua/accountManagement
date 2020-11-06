@@ -1,7 +1,7 @@
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
-
-using std::string;
+#pragma once
+#include "date.h"
+#include <string>
+using namespace std;
 
 class SavingsAccount
 {
@@ -24,4 +24,3 @@ private:
     static double total;                                                // 一个人名下所有账户的总余额
     void error(const string& msg) const;                                // 打印报错信息
 };
-#endif

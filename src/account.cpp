@@ -1,4 +1,8 @@
-#include "stdafx.h"
+#include "account.h"
+#include "date.h"
+#include <iostream>
+#include <cmath>
+#include <string>
 using namespace std;
 
 const int DAYS_OF_YEAR = 365; // 一年按照 365 天计算

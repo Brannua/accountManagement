@@ -1,5 +1,4 @@
-#ifndef __DATE_H__
-#define __DATE_H__
+#pragma once
 
 class Date
 {
@@ -19,5 +18,3 @@ public:
 private:
     int year, month, day, totalDays;        // totalDays 表示从公元元年 1 月 1 日开始的第几天
 };
-
-#endif

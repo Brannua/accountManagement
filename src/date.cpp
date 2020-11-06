@@ -1,4 +1,5 @@
-#include "stdafx.h"
+#include "date.h"
+#include <iostream>
 using namespace std;
 
 namespace

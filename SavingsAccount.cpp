@@ -1,4 +1,6 @@
-#include "stdafx.h"
+#include "date.h"
+#include "account.h"
+#include <iostream>
 using namespace std;
 
 const double RATE = 0.015;

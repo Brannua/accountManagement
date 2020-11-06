@@ -6,17 +6,17 @@
 
 - [开发环境搭建方法](https://github.com/Brannua/vscode-cpp-environment)
 
-- 删除 *.exe 文件
+- cmd / powershell 中文乱码，只改变当前 terminal 本次编码方式为 utf-8，永久方式需要修改注册表
 
-    ```bash
-    del.bat
-    ```
+```
+    chcp 65001
+```
 
 - 备份源码到 github
 
-    ```shell
+```shell
     sh push.sh [some msg...]
-    ```
+```
 
 ### 开发笔记( 私有 )
 
