@@ -8,4 +8,4 @@ set(CMAKE_BUILD_TYPE, Debug)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-add_executable(account src/account.cpp src/date.cpp SavingsAccount.cpp)
+add_executable(account src/account.cpp src/date.cpp src/accumulator.cpp main.cpp)
