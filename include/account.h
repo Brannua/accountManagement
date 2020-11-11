@@ -14,7 +14,7 @@ public:
 protected:
     Account(const Date& date, const string& id);                      // 供派生类调用的构造函数
     void record(const Date& date, double amount, const string& desc); // 记录一笔账
-    void error(const string& msg);                                    // 报告错误信息
+    void error(const string& msg) const;                              // 报告错误信息
 private:
     string id;           // 账号
     double balance;      // 余额
