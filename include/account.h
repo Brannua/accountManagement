@@ -10,7 +10,10 @@ public:
     const string& getId() const { return id; };
     double getBalance() const { return balance; };
     static double getTotal() { return total; };
-    void show() const; // 显示账户信息
+    virtual void show() const; // 显示账户信息
+    virtual void deposit(const Date& date, double amount, const string& desc) = 0;
+    virtual void withdraw(const Date& date, double amount, const string& desc) = 0;
+    virtual void settle(const Date& date) = 0;
 protected:
     Account(const Date& date, const string& id);                      // 供派生类调用的构造函数
     void record(const Date& date, double amount, const string& desc); // 记录一笔账

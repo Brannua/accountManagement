@@ -51,14 +51,16 @@ void SavingsAccount::withdraw(const Date &date, double amount, const string &des
 
 void SavingsAccount::settle(const Date &date)
 {
-    // 计算年息
-    double interest = acc.getSum(date) / date.distance(Date(date.getYear() - 1, 1, 1)) * rate;
-    if (interest != 0)
-    {
-        record(date, interest, "interest");
+    if (date.getMonth() == 1) {
+        // 计算年息
+        double interest = acc.getSum(date) / (date - Date(date.getYear() - 1, 1, 1)) * rate;
+        if (interest != 0)
+        {
+            record(date, interest, "interest");
+        }
+        // 新的计息周期开始, 重置累加器
+        acc.reset(date, getBalance());
     }
-    // 新的计息周期开始, 重置累加器
-    acc.reset(date, getBalance());
 }
 
 CreditAccount::CreditAccount(const Date &date, const string &id, double rate, double fee, double credit) : Account(date, id), rate(rate), fee(fee), credit(credit), acc(date, 0) {}
