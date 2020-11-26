@@ -1,6 +1,7 @@
 #include "date.h"
 #include "accumulator.h"
 #include "account.h"
+#include "Array.h"
 #include <iostream>
 using namespace std;
 
@@ -9,32 +10,40 @@ int main()
 	// 起始日期
 	Date date(2008, 11, 1);
 
-	// 建立几个账户
-	SavingsAccount sa1(date, "s3755217", 0.015);
-	SavingsAccount sa2(date, "02342342", 0.015);
-	CreditAccount ca(date, "c5392394", 0.0005, 50, 10000);
-
-	// 将这几个账户组织起来并计算账户总数
-	Account *accounts[] = {&sa1, &sa2, &ca};
-	const int n = sizeof(accounts) / sizeof(Account *);
+    // 创建账户数组，元素个数为 0
+    Array<Account*> accounts(0); 
 
 	// 一句友好的提示语
-	cout << "(d)deposit (w)withdraw (s)show (c)change_day (n)next_month (e)exit" << endl;
+	cout << "(a)add account (d)deposit (w)withdraw (s)show (c)change_day (n)next_month (e)exit" << endl;
 
 	char cmd;
 	do
 	{
+        char type;
 		int index, day;
-		double amount;
-		string desc;
+		double amount, credit, rate, fee;
+		string id, desc;
+        Account * account;
 
+        // 显示日期和总金额
 		date.show();
-
 		cout << "\tTotal: " << Account::getTotal() << "\tcommand>";
-		cin >> cmd;
 
+        cin >> cmd;
 		switch (cmd)
 		{
+        case 'a': // 增加账户
+            cin>>type>>id;
+            if (type == 's') {
+                cin >> rate;
+                account = new SavingsAccount(date, id, rate);
+            } else {
+                cin >> credit >> rate >> fee;
+                account = new CreditAccount(date, id, credit, rate, fee);
+            }
+            accounts.resize(accounts.getSize() + 1);
+            accounts[accounts.getSize() - 1] = account;
+            break;
 		case 'd': // 存入现金
 			cin >> index >> amount;
 			getline(cin, desc);
@@ -46,7 +55,7 @@ int main()
 			accounts[index]->withdraw(date, amount, desc);
 			break;
 		case 's': // 查询各账户信息
-			for (int i = 0; i < n; i++)
+			for (int i = 0; i < accounts.getSize(); i++)
 			{
 				cout << "[" << i << "]";
 				accounts[i]->show();
@@ -77,9 +86,9 @@ int main()
 			{
 				date = Date(date.getYear(), date.getMonth() + 1, 1);
 			}
-			for (int i = 0; i < n; i++)
+			for (int i = 0; i < accounts.getSize(); i++)
 			{
-				accounts[i]->settle(date);
+                accounts[i] -> settle(date);
 			}
 			break;
 		default:
@@ -87,6 +96,10 @@ int main()
 		}
 
 	} while (cmd != 'e');
+
+    for (int i = 0; i < accounts.getSize(); i ++) {
+        delete accounts[i];
+    }
 
 	return 0;
 }
