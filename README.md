@@ -12,6 +12,6 @@
     chcp 65001
 ```
 
-### 开发笔记( 私有 )
+### 开发笔记
 
 - [Lark doc](https://zir7ybc667.feishu.cn/docs/doccnZ02sHZEUtlvZbDnY5UX51c)
